@@ -1,0 +1,21 @@
+Package: msgraphr
+Title: Light weight interface for liberating SharePoint Online list data via the MS Graph API
+Version: 0.0.0.9000
+Authors@R: utils::person("David", "Severski", email = "davidski@deadheaven.com", role = c("cre", "aut"), comment = "<https://orcid.org/0000-0001-7867-0459")
+Description: `msgraphr` provides a minimal interface to the Microsoft Graph 
+  API. MS Graph is the gateway to the Office 365 suite of products, including 
+  SharePoint Online. Currently, `msgraphr` provides functions for 
+  finding sites, locating lists, and extracting entries as dataframes.
+Depends: R (>= 3.5.0)
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.0
+Imports: 
+    magrittr,
+    httr,
+    jsonlite,
+    dplyr,
+    glue,
+    janitor,
+    rlang
