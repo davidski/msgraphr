@@ -14,9 +14,9 @@ knitr::opts_chunk$set(
 )
 ```
 
-# MSgraphr
+# msgraphr
 
->> NOTE: This package is super raw. It's a shell of some 
+> NOTE: This package is super raw. It's a shell of some 
 functions that work for an immediate need of mine but needs 
 a good bit of polishing. `msgraphr` is posted for public 
 consumption in the hope that it may be of use to some as 
