@@ -68,10 +68,10 @@ library(msgraphr)
 token <- msgraph_auth()
 
 # list all the sites to which you have accesss
-get_sites(search = "", token) %>% head(1) %>% pull(site_id) -> my_site
+get_sites(search = "", token) %>% head(1) %>% pull(id) -> my_site
 
 # list all the lists on that site
-get_lists(site_id = my_site, token) %>% head(1) %>% pull(list_id) -> my_list
+get_lists(site_id = my_site, token) %>% head(1) %>% pull(id) -> my_list
 
 # fetch all the entries on that list
 get_list_entries(site_id = my_site, list_id = my_list, token)

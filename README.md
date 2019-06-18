@@ -1,4 +1,5 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+
 msgraphr
 ========
 
@@ -23,7 +24,8 @@ Authentication
 -   Create an application at
     <a href="https://apps.dev.microsoft.com" class="uri">https://apps.dev.microsoft.com</a>
     with the following fields:
-    -   `Name` Name of your MS Graph app e.g. `msgraphr_query`
+
+    -   `Name` Name of your MS Graph app e.g. `msgraphr_query`
     -   Take note of the `Application Id`, this will be your `client_id`
     -   Generate an application secret and note the value as the
         `Client Secret`
@@ -32,6 +34,7 @@ Authentication
         -   `Redirect URLs`: `http://localhost:1410`
     -   Under Microsoft Graph Permissions specify the scope for which
         you wish to grant access
+
 -   Set `MSGRAPH_PAT` to a location for saving the Oauth2.0 token.
 
 -   To perform the initial authentication.
@@ -57,10 +60,10 @@ library(msgraphr)
 token <- msgraph_auth()
 
 # list all the sites to which you have accesss
-get_sites(search = "", token) %>% head(1) %>% pull(site_id) -> my_site
+get_sites(search = "", token) %>% head(1) %>% pull(id) -> my_site
 
 # list all the lists on that site
-get_lists(site_id = my_site, token) %>% head(1) %>% pull(list_id) -> my_list
+get_lists(site_id = my_site, token) %>% head(1) %>% pull(id) -> my_list
 
 # fetch all the entries on that list
 get_list_entries(site_id = my_site, list_id = my_list, token)
