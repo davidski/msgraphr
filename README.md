@@ -3,11 +3,11 @@
 msgraphr
 ========
 
-> NOTE: This package is super raw. It’s a shell of some functions that
-> work for an immediate need of mine but needs a good bit of polishing.
-> `msgraphr` is posted for public consumption in the hope that it may be
-> of use to some as I’m time-blocked on putting much effort into this
-> right now. PRs o polish the package are **most** welcome.
+> NOTE: This package is quite raw. It’s a shell of some functions that
+> work for my short-term needse but could use polishing. `msgraphr` is
+> posted for public consumption in the hope that it may be of use to
+> some. I’m time-blocked on putting much effort into this right now. PRs
+> are **most** welcome.
 
 **msgraphr** is a minimal R wrapper of the SharePoint Online (Office
 365) APIs, aiming to allow R users to pull down list information as
