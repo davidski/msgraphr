@@ -4,13 +4,20 @@ msgraph_url <- function(api_version = "v1.0") {
   paste0("https://graph.microsoft.com/", api_version)
 }
 
+#' Find the location of the OAuth token cache
+#'
+#' @return Path to the on-disk OAuth cache
 msgraph_token <- function() {
   token <- Sys.getenv('MSGRAPH_PAT', "")
-  if (token == "") stop("MSGRAPH token not found.", .call = FALSE) else token
+  if (token == "") {
+    token <- ".msgraphr_token.rds"
+    warning("Defaulting to the current working directory for saving the OAuth token. Set the MSGRAPH_PAT envirornment variable to a file location to override.", .call = FALSE)
+  }
+  token
 }
 
 msgraph_read_token <- function(token_location = msgraph_token()) {
-  if (!file.exists(token_location)) stop("Unable to read MSGRAPH token.", .call = FALSE)
+  if (!file.exists(token_location)) stop("Unable to find the MSGRAPH OAuth token on disk.", .call = FALSE)
   readRDS(token_location)
 }
 

@@ -35,7 +35,9 @@ Authentication
     -   Under Microsoft Graph Permissions specify the scope for which
         you wish to grant access
 
--   Set `MSGRAPH_PAT` to a location for saving the Oauth2.0 token.
+-   (OPTIONAL, BUT RECOMMENDED) Set the `MSGRAPH_PAT` environment
+    variable to a file location on disk for `msgraphr` to cache the
+    Oauth2.0 token. Defaults to the current working directory.
 
 -   To perform the initial authentication.
 
