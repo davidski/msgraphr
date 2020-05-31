@@ -16,10 +16,9 @@ knitr::opts_chunk$set(
 
 # msgraphr
 
-> NOTE: This package is quite raw. It's a shell of some functions that work for 
-my short-term needse but could use polishing. `msgraphr` is posted for public 
-consumption in the hope that it may be of use to some. I'm time-blocked on 
-putting much effort into this right now. PRs are **most** welcome.
+> NOTE: This package is quite raw. I am not currently using Office 365 
+and cannot develop or debug features apart from the general 
+MS Graph interface. Pull Requests are **most** welcome!
 
 **msgraphr** is a minimal R wrapper of the SharePoint Online (Office 365) 
 APIs, aiming to allow R users to pull down list information as dataframes for 
@@ -32,14 +31,16 @@ local analysis. Liberate your data from SharePoint!
 
 ## Authentication
 
-* Create an application at https://apps.dev.microsoft.com with the following fields:
-  + `Name` Name of your MS Graph app e.g. `msgraphr_query`
-  + Take note of the `Application Id`, this will be your `client_id`
-  + Generate an application secret and note the value as the `Client Secret`
+ * Create an application at https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade with the following fields:
+  + `Name` Name of your MS Graph app e.g. `msgraphr_query`.
+  + Under `Redirect URIs` at a web link pointing to `http://localhost:1410`.
+  + Take note of the `Application Id`, this will be your `client_id`.
+  + Under `Certificates & Secrets` generate an application secret and note the 
+    value for use as the `Client Secret`.
   + Add a Platform and select `Web`.
     + `Allow Implicit Flow`: Unchecked
-    + `Redirect URLs`: `http://localhost:1410`
-  + Under Microsoft Graph Permissions specify the scope for which you wish to grant access
+  + Under API Permissions, alter the Microsoft Graph permissions to 
+    specify the scopes for which you wish to grant access.
   
 * (OPTIONAL, BUT RECOMMENDED) Set the `MSGRAPH_PAT` environment variable to a 
   file location on disk for `msgraphr` to cache the Oauth2.0 token. Defaults 
@@ -54,7 +55,7 @@ local analysis. Liberate your data from SharePoint!
 ### Scope used
 
 * `msgraphr` requests the following access scopes:
-  + `User` and `Sites.Read.All` for SharePoint online read acees
+  + `User` and `Sites.Read.All` for SharePoint online read access
   + `offline_user` so that tokens may be auto-refreshed without further user action
 
 ## Usage

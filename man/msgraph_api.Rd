@@ -4,8 +4,12 @@
 \alias{msgraph_api}
 \title{Execute a GET request against the MS Graph API}
 \usage{
-msgraph_api(path, msgraph_token, query = NULL,
-  api_version = default_api_version())
+msgraph_api(
+  path,
+  msgraph_token,
+  query = NULL,
+  api_version = default_api_version()
+)
 }
 \arguments{
 \item{path}{API endpoint to retrieve}

@@ -18,7 +18,7 @@ msgraph_auth <- function(client_id, client_secret) {
   # Scopes to authorize
   scopes <- c("User.Read", "Sites.Read.All", "offline_access")
 
-  msgraph_endpoint <- httr::oauth_endpoint(base_url = "https://login.microsoftonline.com/common",
+  msgraph_endpoint <- httr::oauth_endpoint(base_url = "https://login.microsoftonline.com/consumers",
                                            authorize = "oauth2/v2.0/authorize",
                                            access    = "oauth2/v2.0/token")
 
